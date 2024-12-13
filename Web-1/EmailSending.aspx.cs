@@ -25,7 +25,7 @@ namespace Web_1
             string[] recipients = TextBox1.Text.Split(new char[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (string recipient in recipients)
             {
-                mail.To.Add(recipient.Trim()); // Add each recipient
+                mail.To.Add(recipient); // Add each recipient
             }
             mail.Subject = TextBox2.Text;
             mail.Body = TextBox3.Text;

@@ -20,6 +20,10 @@ namespace Web_1
             conn.Open();
 
         }
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("LoginPage.aspx");
+        }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
@@ -44,7 +48,7 @@ namespace Web_1
         protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
         {
             string s = TextBox8.Text;
-            char ch = s[0];
+            char ch = s[1];
             if(ch > 'A' && ch < 'Z')
             {
                 args.IsValid = true;
@@ -54,5 +58,7 @@ namespace Web_1
                 args.IsValid = false;
             }
         }
+
+        
     }
 }

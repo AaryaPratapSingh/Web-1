@@ -7,10 +7,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-
-namespace Web_1
+namespace December_Login_1
 {
-    public partial class AddProducts : System.Web.UI.Page
+    public partial class ProductsAdd : System.Web.UI.Page
     {
         SqlConnection conn;
         protected void Page_Load(object sender, EventArgs e)
@@ -19,7 +18,7 @@ namespace Web_1
             conn = new SqlConnection(cs);
             conn.Open();
 
-            if (Session["Username"]!=null)
+            if (Session["Username"] != null)
             {
                 Label1.Text = $"Hello {Session["Username"]}";
             }
@@ -36,7 +35,7 @@ namespace Web_1
             string PPic;
 
             FileUpload1.SaveAs(Server.MapPath("Images/") + System.IO.Path.GetFileName(FileUpload1.FileName));
-            PPic="Images/"+ System.IO.Path.GetFileName(FileUpload1.FileName);
+            PPic = "Images/" + System.IO.Path.GetFileName(FileUpload1.FileName);
 
             string q = $"exec Productt '{PName}','{PCat}','{PPrice}','{PPic}'";
             SqlCommand cmd = new SqlCommand(q, conn);

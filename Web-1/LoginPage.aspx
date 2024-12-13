@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
         }
         
         form {
