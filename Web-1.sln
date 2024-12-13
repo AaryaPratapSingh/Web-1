@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "December-Project-1", "Web-1\December-Project-1.csproj", "{E6C9183A-55FC-4B74-BCC3-50FC90D00A51}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "December-Login-1", "December-Login-1\December-Login-1.csproj", "{87A40735-24EC-455D-8C7D-6A9D2A9065D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterviewSchedule", "InterviewSchedule\InterviewSchedule.csproj", "{186055A0-9CD0-4036-9F7F-BBF2D690B8A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{E6C9183A-55FC-4B74-BCC3-50FC90D00A51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6C9183A-55FC-4B74-BCC3-50FC90D00A51}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6C9183A-55FC-4B74-BCC3-50FC90D00A51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87A40735-24EC-455D-8C7D-6A9D2A9065D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87A40735-24EC-455D-8C7D-6A9D2A9065D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87A40735-24EC-455D-8C7D-6A9D2A9065D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87A40735-24EC-455D-8C7D-6A9D2A9065D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{186055A0-9CD0-4036-9F7F-BBF2D690B8A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{186055A0-9CD0-4036-9F7F-BBF2D690B8A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{186055A0-9CD0-4036-9F7F-BBF2D690B8A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{186055A0-9CD0-4036-9F7F-BBF2D690B8A3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

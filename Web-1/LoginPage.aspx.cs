@@ -20,7 +20,7 @@ namespace Web_1
             if(username.Equals(pass))
             {
                 Session["Username"] = User;
-                Response.Redirect("AddProducts.aspx");
+                Response.Redirect("ProductsAdd.aspx");
             }
             else
             {
