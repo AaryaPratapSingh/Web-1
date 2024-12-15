@@ -8,7 +8,7 @@
     <h2 class="text-center mb-4">Product List</h2>
     <div class="card-container">
         <asp:DataList ID="DataList1" runat="server" RepeatDirection="Horizontal" 
-                      RepeatLayout="Flow">
+                      RepeatLayout="Flow" OnSelectedIndexChanged="DataList1_SelectedIndexChanged">
             <ItemTemplate>
                 <div class="card" style="width: 18rem;">
                     <img class="card-img-top" src='<%# Eval("PPic") %>' alt="Product Image">
@@ -16,6 +16,10 @@
                         <h5 class="card-title"><%# Eval("PName") %></h5>
                         <p class="card-text">Category: <%# Eval("PCat") %></p>
                         <p class="card-text">Price: $<%# Eval("PPrice") %></p>
+
+                    <p class="list-group-item">
+                        Product Qty : <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                    </p>
                     </div>
                 </div>
             </ItemTemplate>

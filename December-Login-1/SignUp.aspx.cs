@@ -25,13 +25,28 @@ namespace December_Login_1
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            string user=TextBox1.Text, pass=TextBox3.Text, email=TextBox2.Text, urole="User";
+            string UserName=TextBox1.Text, UserEmail = TextBox2.Text, UserPass =TextBox3.Text,  urole="User";
 
-            string q = $"exec signupproc  '{user}','{email}','{pass}','{urole}'";
-            SqlCommand cmd = new SqlCommand(q, conn);
-            cmd.ExecuteNonQuery();
-            Response.Write("<script>alert('SignUp Sucssefully!!!'); window.location.href='SignIn.aspx';</script>");
+            string query = $"exec FindExistingUser '{UserEmail}'";
+            SqlCommand cm = new SqlCommand(query, conn);
+            SqlDataReader rdr = cm.ExecuteReader();
+            if (rdr.HasRows)
+            {
+                Response.Write("<script>alert ('User Already Exist!!');</script>");
+            }
+            else
+            {
+                string q = $"exec Userproc  '{UserName}','{UserEmail}','{UserPass}','{urole}'";
+                SqlCommand cmd = new SqlCommand(q, conn);
+                cmd.ExecuteNonQuery();
+                Response.Write("<script>alert('SignUp Sucssefully!!!'); window.location.href='SignIn.aspx';</script>");
+            }
+            
         }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignIn.aspx");
+        }
     }
 }

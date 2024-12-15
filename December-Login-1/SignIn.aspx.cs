@@ -22,24 +22,38 @@ namespace December_Login_1
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string em = TextBox1.Text, pass = TextBox2.Text;
-            string q = $"exec signinproc '{em}','{pass}'";
+
+            string UserEmail = TextBox1.Text, UserPass = TextBox2.Text;
+            string q = $"exec SignInprocduer '{UserEmail}','{UserPass}'";
             SqlCommand cmd = new SqlCommand(q, conn);
             SqlDataReader rdr = cmd.ExecuteReader();
-            if (rdr.Read())
+            if (rdr.HasRows) // Check if data exists
             {
-                while (rdr.Read())
+                rdr.Read(); // Move to the first record
+                if (rdr["UserEmail"].ToString().Equals(UserEmail, StringComparison.OrdinalIgnoreCase) &&
+                    rdr["UserPass"].ToString().Equals(UserPass) &&
+                    rdr["urole"].ToString().Equals("Admin", StringComparison.OrdinalIgnoreCase))
                 {
-                    if (rdr["UserEmail"].Equals(em) && rdr["UserPass"].Equals(pass) && rdr["Urole"].Equals("Admin"))
-                    {
-                        Response.Redirect("AdminHome.aspx");
-                    }
-                    if (rdr["UserEmail"].Equals(em) && rdr["UserPass"].Equals(pass) && rdr["Urole"].Equals("User"))
-                    {
-                        Response.Redirect("UserHome.aspx");
-                    }
+                    Response.Redirect("ProductsAdd.aspx");
+                }
+                else if (rdr["UserEmail"].ToString().Equals(UserEmail, StringComparison.OrdinalIgnoreCase) &&
+                         rdr["UserPass"].ToString().Equals(UserPass) &&
+                         rdr["urole"].ToString().Equals("User", StringComparison.OrdinalIgnoreCase))
+                {
+                    Response.Redirect("ProductsGet.aspx");
+                }
+                else
+                {
+                    Response.Write("<script>alert('Invalid user role!'); window.location='SignIn.aspx';</script>");
                 }
             }
+            else
+            {
+                Response.Write("<script>alert('Invalid User Credentials. Please try again.'); window.location='SignIn.aspx';</script>");
+            }
+
+            rdr.Close(); // Close the reader
+            conn.Close(); // Close the connection
         }
     }
 }

@@ -18,13 +18,13 @@ namespace December_Login_1
             conn = new SqlConnection(cs);
             conn.Open();
 
-            if (Session["Username"] != null)
+            if (Session["UserEmail"] != null)
             {
-                Label1.Text = $"Hello {Session["Username"]}";
+                Label1.Text = $"Hello {Session["UserEmail"]}";
             }
             else
             {
-                Response.Write("<script>alert('Need to login'); window.location.href='login.aspx';</script>");
+                Response.Write("<script>alert('Need to login');</script>");
             }
         }
 

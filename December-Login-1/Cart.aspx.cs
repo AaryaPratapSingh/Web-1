@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace December_Login_1
 {
-    public partial class AdminHome : System.Web.UI.Page
+    public partial class Cart : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

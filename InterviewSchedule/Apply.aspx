@@ -1,61 +1,86 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Apply.aspx.cs" Inherits="InterviewSchedule.Apply" %>
 
 <!DOCTYPE html>
-
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Apply Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+            width: 50%;
+            margin: auto;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+            font-size: 24px;
+        }
+
+        label {
+            font-size: 14px;
+            color: #555555;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+
+        .form-control:focus {
+            border-color: #007bff;
+            outline: none;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+
+        .button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .container {
+            margin: 20px 0;
+        }
+    </style>
     <script>
-        function handleStreamChange() {
-            const streamDropdown = document.getElementById('<%= DropDownList1.ClientID %>');
-            const otherInputs = document.querySelectorAll(".form-control");
-            const selectedStream = streamDropdown.value;
-
-            if (selectedStream === "Others") {
-                // Disable all other inputs except the stream dropdown
-                otherInputs.forEach(input => {
-                    if (input !== streamDropdown) {
-                        input.disabled = true;
-                    }
-                });
-            } else {
-                // Enable all inputs if stream is not "Others"
-                otherInputs.forEach(input => input.disabled = false);
-            }
-        }
-
-        function handleAreYouChange() {
-            const areYouDropdown = document.getElementById('<%= DropDownList2.ClientID %>');
-        const ctcInput = document.getElementById('<%= TextBox4.ClientID %>');
-        const ectcInput = document.getElementById('<%= TextBox5.ClientID %>');
-        const noticePeriodDropdown = document.getElementById('<%= DropDownList3.ClientID %>');
-            const selectedOption = areYouDropdown.value;
-
-            if (selectedOption === "Fresher") {
-                // Disable CTC, ECTC, and Notice Period for freshers
-                ctcInput.disabled = true;
-                ectcInput.disabled = true;
-                noticePeriodDropdown.disabled = true;
-
-                // Clear their values
-                ctcInput.value = "";
-                ectcInput.value = "";
-                noticePeriodDropdown.selectedIndex = 0;
-            } else {
-                // Enable CTC, ECTC, and Notice Period for experienced
-                ctcInput.disabled = false;
-                ectcInput.disabled = false;
-                noticePeriodDropdown.disabled = false;
-            }
-        }
+        
     </script>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div style="width: 50%; margin: auto; text-align: left;">
-
+        <h1>Job Application Form</h1>
+        <div class="container">
             <label for="DropDownList1">Stream</label>
-            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="false" onchange="handleStreamChange()">
+            <asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="false" CssClass="form-control" onchange="handleStreamChange()">
                 <asp:ListItem>B.Sc(IT)</asp:ListItem>
                 <asp:ListItem>B.Sc(CS)</asp:ListItem>
                 <asp:ListItem>B.Tech</asp:ListItem>
@@ -65,34 +90,27 @@
                 <asp:ListItem>MBA(IT)</asp:ListItem>
                 <asp:ListItem>Others</asp:ListItem>
             </asp:DropDownList>
-            <br /><br />
 
             <label for="DropDownList2">Are You</label>
-            <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="false" onchange="handleAreYouChange()">
+            <asp:DropDownList ID="DropDownList2" runat="server" AutoPostBack="false" CssClass="form-control" onchange="handleAreYouChange()">
                 <asp:ListItem>Fresher</asp:ListItem>
                 <asp:ListItem>Experience</asp:ListItem>
             </asp:DropDownList>
-            <br /><br />
 
             <label for="TextBox1">Name</label>
             <asp:TextBox ID="TextBox1" runat="server" CssClass="form-control"></asp:TextBox>
-            <br /><br />
 
             <label for="TextBox2">Contact No.</label>
             <asp:TextBox ID="TextBox2" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
-            <br /><br />
 
             <label for="TextBox3">Mail-id</label>
             <asp:TextBox ID="TextBox3" runat="server" TextMode="Email" CssClass="form-control"></asp:TextBox>
-            <br /><br />
 
             <label for="TextBox4">CTC</label>
             <asp:TextBox ID="TextBox4" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
-            <br /><br />
 
             <label for="TextBox5">ECTC</label>
             <asp:TextBox ID="TextBox5" runat="server" TextMode="Number" CssClass="form-control"></asp:TextBox>
-            <br /><br />
 
             <label for="DropDownList3">Notice Period</label>
             <asp:DropDownList ID="DropDownList3" runat="server" CssClass="form-control">
@@ -103,13 +121,11 @@
                 <asp:ListItem>5 Month</asp:ListItem>
                 <asp:ListItem>6 Month</asp:ListItem>
             </asp:DropDownList>
-            <br /><br />
 
             <label for="FileUpload1">Resume</label>
             <asp:FileUpload ID="FileUpload1" runat="server" CssClass="form-control"></asp:FileUpload>
-            <br /><br />
 
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Upload" CssClass="form-control" />
+            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Submit" CssClass="button" />
         </div>
     </form>
 </body>

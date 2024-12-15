@@ -15,6 +15,8 @@
         <asp:ListItem>Mobile</asp:ListItem>
         <asp:ListItem>Clothes</asp:ListItem>
         <asp:ListItem>Food</asp:ListItem>
+        <asp:ListItem>Animals</asp:ListItem>
+        <asp:ListItem>Others</asp:ListItem>
     </asp:DropDownList>
     
     <label for="FileUpload1">Product Picture</label>
