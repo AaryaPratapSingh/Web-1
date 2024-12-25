@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace December_Login_1
+namespace DecBatchASP
 {
+
     public partial class ProductsAdd : System.Web.UI.Page
     {
         SqlConnection conn;
@@ -18,36 +20,26 @@ namespace December_Login_1
             conn = new SqlConnection(cs);
             conn.Open();
 
-            if (Session["UserEmail"] != null)
-            {
-                Label1.Text = $"Hello {Session["UserEmail"]}";
-            }
-            else
-            {
-                Response.Write("<script>alert('Need to login');</script>");
-            }
+            var username = Session["Username"]?.ToString();
+            Label1.Text = $"Hello {username}";
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            string PName = TextBox1.Text, PCat = DropDownList1.SelectedValue;
-            double PPrice = double.Parse(TextBox2.Text);
+            string PName = TextBox1.Text;
+            string PCat = DropDownList1.SelectedValue;
             string PPic;
+            double PPrice = double.Parse(TextBox2.Text);
 
-            FileUpload1.SaveAs(Server.MapPath("Images/") + System.IO.Path.GetFileName(FileUpload1.FileName));
-            PPic = "Images/" + System.IO.Path.GetFileName(FileUpload1.FileName);
+            FileUpload1.SaveAs(Server.MapPath("Images/") + Path.GetFileName(FileUpload1.FileName));
+            PPic = "Images/" + Path.GetFileName(FileUpload1.FileName);
 
-            string q = $"exec Productt '{PName}','{PCat}','{PPrice}','{PPic}'";
+            string q = $" exec ProductsAddProc '{PName}','{PCat}','{PPic}','{PPrice}'";
             SqlCommand cmd = new SqlCommand(q, conn);
-            int row = cmd.ExecuteNonQuery();
-            if (row > 0)
-            {
-                Response.Write("<script>alert('emp added sucsessfully')</script>");
-            }
-            else
-            {
-                Response.Write("<script>alert('emp not added')</script>");
-            }
+            cmd.ExecuteNonQuery();
+            Response.Write("<script>alert('product added successfully!!')</Script>");
+            //Response.Redirect("Admin.Master.aspx");
         }
     }
 }

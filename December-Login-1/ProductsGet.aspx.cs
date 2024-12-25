@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace December_Login_1
+namespace MasterProject
 {
     public partial class ProductsGet : System.Web.UI.Page
     {
@@ -17,32 +18,43 @@ namespace December_Login_1
             string cs = ConfigurationManager.ConnectionStrings["dbconn"].ConnectionString;
             conn = new SqlConnection(cs);
             conn.Open();
+
+            GetData();
         }
 
-        protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+        public void GetData()
         {
-            //if (e.CommandName == "AddToCart")
-            //{
-            //    string q = $"exec FindProductById '{e.CommandArgument.ToString()}'";
-            //    SqlCommand cm = new SqlCommand(q, conn);
-            //    SqlDataReader dr = cm.ExecuteReader();
-            //    dr.Read();
-            //    string prod_name = dr["pname"].ToString();
-            //    string prod_cat = dr["pcat"].ToString();
-            //    string prod_pic = dr["pic"].ToString();
-            //    string prod_price = double.Parse(dr["price"].ToString());
+            try
+            {
+                // Get the connection string from Web.config
+                string cs = ConfigurationManager.ConnectionStrings["dbconn"].ConnectionString;
+                using (SqlConnection conn = new SqlConnection(cs))
+                {
+                    conn.Open();
 
-            //    string pdate = DateTime.Now.ToString("dd/mm/yyyy");
-            //    DropDownList dropdownn = e.Item.FindControl("DropDownList") as DropDownList;
-            //    int quantity = int.Parse(dropdownn.SelectedValue.ToString());
+                    // Use the stored procedure
+                    string q = "FetchProductsProc";
+                    using (SqlCommand cmd = new SqlCommand(q, conn))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
 
-            //    double total = prod_price * quantity;
-            //    string suser = Session["MyUser"].ToString();
+                        // Execute and bind the data to the GridView
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                        {
+                            DataTable dt = new DataTable();
+                            adapter.Fill(dt);
 
-            //    string q2 = $"exec AddToCart '{prod_name}','{prod_cat}','{prod_pic}','{prod_price}','{quantity}','{total}','{pdate}','{suser}'";
-            //    SqlCommand cmd = new SqlCommand(q2, conn);
-            //    cmd.ExecuteNonQuery();
-            //    Response.Redirect("Cart.aspx");
+                            GridView1.DataSource = dt;
+                            GridView1.DataBind();
+                        }
+                    }
+                }
             }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
+            }
+            //Response.Redirect("User.Master.aspx");
         }
     }
+}

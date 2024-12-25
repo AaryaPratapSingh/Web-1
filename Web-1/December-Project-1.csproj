@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -67,6 +73,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MultiViewControl.aspx" />
     <Content Include="ProductsAdd.aspx" />
     <Content Include="Emp.aspx" />
     <Content Include="ProductsGet.aspx" />
@@ -77,8 +84,17 @@
     <Content Include="EmailSending.aspx" />
     <Content Include="Web.config" />
     <Content Include="SignUpPage.aspx" />
+    <Content Include="WebUserControl1.ascx" />
+    <Content Include="WebUserControlImp.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MultiViewControl.aspx.cs">
+      <DependentUpon>MultiViewControl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MultiViewControl.aspx.designer.cs">
+      <DependentUpon>MultiViewControl.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ProductsAdd.aspx.cs">
       <DependentUpon>ProductsAdd.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -135,6 +151,20 @@
     </Compile>
     <Compile Include="SignUpPage.aspx.designer.cs">
       <DependentUpon>SignUpPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControlImp.aspx.cs">
+      <DependentUpon>WebUserControlImp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControlImp.aspx.designer.cs">
+      <DependentUpon>WebUserControlImp.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
