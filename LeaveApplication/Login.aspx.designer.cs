@@ -42,6 +42,7 @@ namespace LeaveApplication
         protected global::System.Web.UI.WebControls.TextBox TextBox2;
 
         /// <summary>
+<<<<<<< HEAD
         /// TextBox3 control.
         /// </summary>
         /// <remarks>
@@ -51,6 +52,8 @@ namespace LeaveApplication
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
 
         /// <summary>
+=======
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
         /// Button1 control.
         /// </summary>
         /// <remarks>
@@ -58,6 +61,7 @@ namespace LeaveApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
+<<<<<<< HEAD
 
         /// <summary>
         /// Button2 control.
@@ -67,5 +71,7 @@ namespace LeaveApplication
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
+=======
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
     }
 }

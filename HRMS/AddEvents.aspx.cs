@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -9,9 +11,23 @@ namespace HRMS
 {
     public partial class AddEvents : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
+            SqlConnection conn;
+            protected void Page_Load(object sender, EventArgs e)
+            {
+                string cs = ConfigurationManager.ConnectionStrings["dbconn"].ConnectionString;
+                conn = new SqlConnection(cs);
+                conn.Open();
+
+                if (!IsPostBack)
+                {
+
+                    
+                }
+
+            }
+
+           
+
 
         }
     }
-}

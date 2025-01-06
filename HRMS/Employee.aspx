@@ -234,10 +234,7 @@
                                         </li>
                                         
                                         <hr class="my-2">
-                                        <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                        </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        <li><a href="SignUp.aspx"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -298,18 +295,18 @@
 
                         </ul>
                     </li>
-                   
-                    <!-- Email -->
+
+                    <!-- Performance -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Email</span>
+                            <i class="icon-pie-chart menu-icon"></i><span class="nav-text">Performance</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
+                            <li><a href="PerformanceFrom.aspx">Fill The From</a></li>
+                            <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
+
                     <!-- Chart -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -324,6 +321,19 @@
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
+                   
+                    <!-- Email -->
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Email</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./email-inbox.html">Inbox</a></li>
+                            <li><a href="./email-read.html">Read</a></li>
+                            <li><a href="./email-compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                   
                     <!-- Contact & Support -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -341,18 +351,19 @@
                         <ul aria-expanded="false">
                             <li><a href="SignIn.aspx">SignIn</a></li>
                             <li><a href="SignUp.aspx">SignUp</a></li>
+                            <li><a href="SignUp.aspx"><i class="icon-key"></i> <span>Logout</span></a></li>
                             <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-    <!--**********************************
+     <!--**********************************
                 Sidebar end
-    ***********************************-->
+     ***********************************-->
 
         <!--**********************************
-            Content body start
+                Content body start
         ***********************************-->
         <div class="content-body">
 

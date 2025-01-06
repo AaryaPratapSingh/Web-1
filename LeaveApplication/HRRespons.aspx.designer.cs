@@ -78,6 +78,7 @@ namespace LeaveApplication
         protected global::System.Web.UI.WebControls.TextBox TextBox6;
 
         /// <summary>
+<<<<<<< HEAD
         /// TextBox7 control.
         /// </summary>
         /// <remarks>
@@ -87,6 +88,8 @@ namespace LeaveApplication
         protected global::System.Web.UI.WebControls.TextBox TextBox7;
 
         /// <summary>
+=======
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
         /// Button1 control.
         /// </summary>
         /// <remarks>

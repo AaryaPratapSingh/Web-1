@@ -84,7 +84,10 @@ namespace InterviewSchedule
             string UEmail = TextBox3.Text;
             double UCTC = double.Parse(TextBox4.Text);
             double UECTC = double.Parse(TextBox5.Text);
+<<<<<<< HEAD
             string UNotice = DropDownList3.SelectedValue;
+=======
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
             string UResume;
 
 
@@ -92,16 +95,28 @@ namespace InterviewSchedule
             UResume = "Resume/" + System.IO.Path.GetFileName(FileUpload1.FileName);
 
 
+<<<<<<< HEAD
             string q = $"exec ApplyData '{UStream}','{UAre}','{UName}','{UCon}','{UEmail}','{UCTC}','{UECTC}','{UNotice}','{UResume}'";
+=======
+            string q = $"exec ApplyData '{UStream}','{UAre}','{UName}','{UCon}','{UEmail}','{UCTC}','{UECTC}','{UResume}'";
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
             SqlCommand cmd = new SqlCommand(q, conn);
             int row = cmd.ExecuteNonQuery();
             if (row > 0)
             {
+<<<<<<< HEAD
                 Response.Write("<Script>alert('Applyed Sucesessfully !!!'); window.location.href='BookSlot.aspx';</script>");
             }
             else
             {
                 Response.Write("<script>alert('Wrong Inputs!!!');</script>");
+=======
+                Response.Write("<Script>alert'Applyed Sucesessfully !!!' window.location,href='BookSlot.aspx'</script>");
+            }
+            else
+            {
+                Response.Write("<script>alert'Wrong Inputs!!!'</script>");
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
             }
 
         }

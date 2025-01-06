@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
+      <HintPath>..\packages\BouncyCastle.Cryptography.2.4.0\lib\net461\BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.4, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.4\lib\net461\itextsharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -584,6 +590,9 @@
     <Content Include="LeaveManagement.aspx" />
     <Content Include="ManageUser.aspx" />
     <Content Include="Payroll.aspx" />
+    <Content Include="PayrollFetch.aspx" />
+    <Content Include="PerformanceForm.aspx" />
+    <Content Include="PerformanceReport.aspx" />
     <Content Include="plugins\amcharts\amcharts.js" />
     <Content Include="plugins\amcharts\ammap.js" />
     <Content Include="plugins\amcharts\amstock.js" />
@@ -5071,6 +5080,27 @@
     <Compile Include="Payroll.aspx.designer.cs">
       <DependentUpon>Payroll.aspx</DependentUpon>
     </Compile>
+    <Compile Include="PayrollFetch.aspx.cs">
+      <DependentUpon>PayrollFetch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PayrollFetch.aspx.designer.cs">
+      <DependentUpon>PayrollFetch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerformanceForm.aspx.cs">
+      <DependentUpon>PerformanceForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerformanceForm.aspx.designer.cs">
+      <DependentUpon>PerformanceForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PerformanceReport.aspx.cs">
+      <DependentUpon>PerformanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PerformanceReport.aspx.designer.cs">
+      <DependentUpon>PerformanceReport.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Queries.aspx.cs">
       <DependentUpon>Queries.aspx</DependentUpon>
@@ -5379,6 +5409,7 @@
     <Content Include="plugins\typeahedjs\dist\nba.json" />
     <Content Include="plugins\typeahedjs\dist\nfl.json" />
     <Content Include="plugins\typeahedjs\dist\nhl.json" />
+    <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -5388,6 +5419,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DocFiles\" />
+    <Folder Include="PaySlips\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

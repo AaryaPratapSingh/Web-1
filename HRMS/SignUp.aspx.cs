@@ -23,7 +23,7 @@ namespace HRMS
         {
             string UName = TextBox1.Text, UEmail = TextBox2.Text, UPassword = TextBox3.Text, URole = "User";
 
-            string query = $"exec FindExistingUser '{UEmail}'";
+            string query = $"exec FindExistingUser  '{UEmail}'";
             SqlCommand cm = new SqlCommand(query, conn);
             SqlDataReader rdr = cm.ExecuteReader();
             if (rdr.HasRows)

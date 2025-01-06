@@ -32,19 +32,19 @@ namespace HRMS
         {
             try
             {
-                // Get the connection string from Web.config
+
                 string cs = ConfigurationManager.ConnectionStrings["dbconn"].ConnectionString;
                 using (SqlConnection conn = new SqlConnection(cs))
                 {
                     conn.Open();
 
-                    // Use the stored procedure
+
                     string q = "FetchLeaveApplicationProc";
                     using (SqlCommand cmd = new SqlCommand(q, conn))
                     {
                         cmd.CommandType = CommandType.StoredProcedure;
 
-                        // Execute and bind the data to the GridView
+
                         using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                         {
                             DataTable dt = new DataTable();
@@ -101,39 +101,14 @@ namespace HRMS
                     }
 
                     Response.Write("<script>alert('Leave approved successfully.');</script>");
+
                 }
                 catch (Exception ex)
                 {
                     Response.Write("<script>alert('Error: " + ex.Message + "');</script>");
                 }
+
             }
-            //if (e.CommandName == "Reject")
-            //{
-            //    MailMessage mail = new MailMessage();
-            //    mail.From = new MailAddress("aaryapratapsingh007@gmail.com");
-
-            //    string[] recipients = TextBox1.Text.Split(new char[] { ',', ';' }, StringSplitOptions.RemoveEmptyEntries);
-            //    foreach (string recipient in recipients)
-            //    {
-            //        mail.To.Add(recipient); // Add each recipient
-            //    }
-            //    mail.Subject = TextBox2.Text;
-            //    mail.Body = TextBox3.Text;
-
-            //    foreach (var postedFile in FileUpload1.PostedFiles)
-            //    {
-            //        string filePath = Path.Combine(Server.MapPath("~/Attachments"), postedFile.FileName);
-            //        postedFile.SaveAs(filePath);
-            //        mail.Attachments.Add(new Attachment(filePath));
-            //    }
-
-            //    SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-            //    smtp.Port = 587;
-            //    smtp.EnableSsl = true;
-            //    smtp.Credentials = new NetworkCredential("aaryapratapsingh007@gmail.com", "uigeukyshvlgedwu");
-            //    smtp.Send(mail);
-            //}
         }
     }
-
 }

@@ -23,10 +23,16 @@ namespace LeaveApplication
         protected void Button1_Click(object sender, EventArgs e)
         {
             string UserName = TextBox1.Text;
+<<<<<<< HEAD
             string UEmail = TextBox2.Text;
             string UserPassword = TextBox3.Text;
 
             string q = $"exec LeaveUsers '{UserName}','{UEmail}','{UserPassword}'";
+=======
+            string UserPassword = TextBox2.Text;
+
+            string q = $"exec LeaveUsers '{UserName}','{UserPassword}'";
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
             SqlCommand cmd = new SqlCommand(q, conn);
             int row = cmd.ExecuteNonQuery();
             if (row > 0)
@@ -39,6 +45,7 @@ namespace LeaveApplication
                 Response.Write("<script>alert'Wrong Inputs!!!'</script>");
             }
         }
+<<<<<<< HEAD
 
         protected void Button2_Click(object sender, EventArgs e)
         {
@@ -49,5 +56,7 @@ namespace LeaveApplication
         {
             Response.Redirect("HRRespons.aspx");
         }
+=======
+>>>>>>> fe1f6686128795fba17ee38f061bae25836dc05d
     }
 }

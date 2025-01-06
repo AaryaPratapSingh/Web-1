@@ -269,10 +269,20 @@
                             <i class="icon-user menu-icon"></i><span class="nav-text">Employee</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="UploadDoc.aspx">Upload Documents</a></li>
-                            <li><a href="MyDoc.aspx">My Documents</a></li>
                             <li><a href="Attendance.aspx">Attendance</a></li>
                             <li><a href="LeaveApplication.aspx">Leave Application</a></li>
+                            <li><a href="SignIn.aspx">+</a></li>
+                        </ul>
+                    </li>
+
+                    <!-- Documents -->
+                    <li class="mega-menu mega-menu-sm">
+                        <a class="has-arrow" href="javascript:void(0);" aria-expanded="false">
+                            <i class="icon-doc menu-icon"></i><span class="nav-text">Documents</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="SendDoc.aspx">Send Documents</a></li>
+                            <li><a href="ViewDoc.aspx">My Documents</a></li>
                             <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
@@ -288,18 +298,18 @@
 
                         </ul>
                     </li>
-                   
-                    <!-- Email -->
+
+                    <!-- Performance -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Email</span>
+                            <i class="icon-pie-chart menu-icon"></i><span class="nav-text">Performance</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
+                            <li><a href="PerformanceFrom.aspx">Fill The From</a></li>
+                            <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
+
                     <!-- Chart -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -314,6 +324,19 @@
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
+                   
+                    <!-- Email -->
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Email</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./email-inbox.html">Inbox</a></li>
+                            <li><a href="./email-read.html">Read</a></li>
+                            <li><a href="./email-compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                   
                     <!-- Contact & Support -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -331,15 +354,16 @@
                         <ul aria-expanded="false">
                             <li><a href="SignIn.aspx">SignIn</a></li>
                             <li><a href="SignUp.aspx">SignUp</a></li>
+                            <li><a href="SignUp.aspx"><i class="icon-key"></i> <span>Logout</span></a></li>
                             <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-    <!--**********************************
+     <!--**********************************
                 Sidebar end
-    ***********************************-->
+     ***********************************-->
 
         <!--**********************************
     Content body start

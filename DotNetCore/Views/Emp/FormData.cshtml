@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Emp
+
+<form>
+    
+    <div class="form-group">
+        <label for="exampleInputPassword1">Emp_Name</label>
+        <input type="text" name="Emp_name" class="form-control" id="exampleInputPassword1" placeholder="enter name">
+    </div>
+    
+    <div class="form-group">
+        <label for="exampleInputPassword1">Emp_Email</label>
+        <input type="text" name="Emp_email" class="form-control" id="exampleInputPassword1" placeholder="enter email">
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Emp_Salary</label>
+        <input type="text" name="Emp_salary" class="form-control" id="exampleInputPassword1" placeholder="enter salary">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+@if(Model!=null)
+{
+ @Model.name<br/>
+
+ @Model.email<br/>
+
+    @Model.salary
+}

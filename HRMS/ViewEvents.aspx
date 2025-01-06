@@ -250,10 +250,10 @@
             Header end ti-comment-alt
         ***********************************-->
 
-        <!--**********************************
-            Sidebar start
-        ***********************************-->
-        <div class="nk-sidebar">           
+         <!--**********************************
+         Sidebar start
+         ***********************************-->
+        <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
                     <!-- Dashboard -->
@@ -261,26 +261,20 @@
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="Admin.aspx">Home</a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
-                        </ul>
+                       
                     </li>
-                    <!-- Admin -->
+                    <!-- Employee -->
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void(0);" aria-expanded="false">
-                            <i class="icon-shield menu-icon"></i><span class="nav-text">Admin</span>
-
+                            <i class="icon-user menu-icon"></i><span class="nav-text">Employee</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="ManageUser.aspx">Manage Users</a></li>
-                            <li><a href="AttendanceManagement.aspx">Attendance Management</a></li>
-                            <li><a href="LeaveManagement.aspx">Leave Management</a></li>
-                            <li><a href="Payroll.aspx">Payroll</a></li>
-                            <li><a href="SignIn.aspx">+</a></li> 
+                            <li><a href="Attendance.aspx">Attendance</a></li>
+                            <li><a href="LeaveApplication.aspx">Leave Application</a></li>
+                            <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
-                    
+
                     <!-- Documents -->
                     <li class="mega-menu mega-menu-sm">
                         <a class="has-arrow" href="javascript:void(0);" aria-expanded="false">
@@ -288,7 +282,7 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="SendDoc.aspx">Send Documents</a></li>
-                            <li><a href="ViewDoc.aspx">View Documents</a></li>
+                            <li><a href="ViewDoc.aspx">My Documents</a></li>
                             <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
@@ -299,24 +293,23 @@
                         </a>
 
                         <ul aria-expanded="false">
-                            <li><a href="AddEvents.aspx">Add Events</a></li>
                             <li><a href="ViewEvents.aspx">View Events</a></li>
                             <li><a href="SignIn.aspx">+</a></li>
 
                         </ul>
                     </li>
-                   
-                    <!-- Email -->
+
+                    <!-- Performance -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                            <i class="icon-pie-chart menu-icon"></i><span class="nav-text">Performance</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
+                            <li><a href="PerformanceFrom.aspx">Fill The From</a></li>
+                            <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
+
                     <!-- Chart -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -331,13 +324,26 @@
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
+                   
+                    <!-- Email -->
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i><span class="nav-text">Email</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./email-inbox.html">Inbox</a></li>
+                            <li><a href="./email-read.html">Read</a></li>
+                            <li><a href="./email-compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                   
                     <!-- Contact & Support -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-support menu-icon"></i><span class="nav-text">Contact & Support</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="Queries.aspx">Queries</a></li>
+                            <li><a href="AskQueries.aspx">Ask Queries</a></li>
                         </ul>
                     </li>
                     <!-- Login -->
@@ -348,16 +354,16 @@
                         <ul aria-expanded="false">
                             <li><a href="SignIn.aspx">SignIn</a></li>
                             <li><a href="SignUp.aspx">SignUp</a></li>
+                            <li><a href="SignUp.aspx"><i class="icon-key"></i> <span>Logout</span></a></li>
                             <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
-        <!--**********************************
-            Sidebar end
-        ***********************************-->
-
+     <!--**********************************
+                Sidebar end
+     ***********************************-->
         <!--**********************************
             Content body start
         ***********************************-->

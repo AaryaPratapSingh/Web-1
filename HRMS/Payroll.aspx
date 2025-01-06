@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Payroll.aspx.cs" Inherits="HRMS.Payroll" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Payroll.aspx.cs" Inherits="HRMS.Payroll1" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -261,10 +261,6 @@
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="Admin.aspx">Home</a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
-                        </ul>
                     </li>
                     <!-- Admin -->
                     <li class="mega-menu mega-menu-sm">
@@ -277,6 +273,8 @@
                             <li><a href="AttendanceManagement.aspx">Attendance Management</a></li>
                             <li><a href="LeaveManagement.aspx">Leave Management</a></li>
                             <li><a href="Payroll.aspx">Payroll</a></li>
+                            <li><a href="PayrollFetch.aspx">Payroll Data</a></li>
+
                             <li><a href="SignIn.aspx">+</a></li> 
                         </ul>
                     </li>
@@ -305,16 +303,16 @@
 
                         </ul>
                     </li>
-                   
-                    <!-- Email -->
+
+                    <!-- Performance -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                            <i class="icon-pie-chart menu-icon"></i><span class="nav-text">Performance</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
+                            <li><a href="PerformanceFrom.aspx">Fill The From</a></li>
+                            <li><a href="PerformanceReport.aspx">All Reports</a></li>
+                            <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
                     <!-- Chart -->
@@ -331,6 +329,19 @@
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
+
+                    <!-- Email -->
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./email-inbox.html">Inbox</a></li>
+                            <li><a href="./email-read.html">Read</a></li>
+                            <li><a href="./email-compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    
                     <!-- Contact & Support -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -348,6 +359,7 @@
                         <ul aria-expanded="false">
                             <li><a href="SignIn.aspx">SignIn</a></li>
                             <li><a href="SignUp.aspx">SignUp</a></li>
+                            <li><a href="SignUp.aspx"><i class="icon-key"></i> <span>Logout</span></a></li>
                             <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
@@ -357,140 +369,156 @@
         <!--**********************************
             Sidebar end
         ***********************************-->
+
         <!--**********************************
     Content body start
 ***********************************-->
 <div class="content-body">
 
     <div class="container-fluid mt-3">
-
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f7fc;
-                margin: 0;
-                padding: 0;
-            }
-
-            #form1 {
-                width: 80%;
-                margin: 30px auto;
-                padding: 20px;
-                background-color: #fff;
-                border-radius: 8px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            }
-
-            h2 {
-                text-align: center;
-                color: #333;
-            }
-
-            label {
-                font-size: 16px;
-                font-weight: bold;
-                margin-right: 10px;
-            }
-
-            input[type="text"] {
-                padding: 10px;
-                width: 50%;
-                border-radius: 4px;
-                border: 1px solid #ddd;
-                margin-bottom: 20px;
-                font-size: 16px;
-            }
-
-            .btn {
-                background-color: #4CAF50;
-                color: white;
-                padding: 10px 15px;
-                font-size: 16px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                margin-bottom: 20px;
-            }
-
-            .btn:hover {
-                background-color: #45a049;
-            }
-
-            .grid-container {
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-                gap: 10px;
-            }
-
-            .grid-container table {
-                width: 100%;
-                border-collapse: collapse;
-                margin-top: 20px;
-            }
-
-            .grid-container th, .grid-container td {
-                padding: 12px 15px;
-                text-align: center;
-                border: 1px solid #ddd;
-            }
-
-            .grid-container th {
-                background-color: #4CAF50;
-                color: white;
-            }
-
-            .grid-container td {
-                background-color: #f9f9f9;
-            }
-
-            .grid-container td button {
-                background-color: #4CAF50;
-                color: white;
-                padding: 5px 10px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-            }
-
-            .grid-container td button:hover {
-                background-color: #45a049;
-            }
-        </style>
-
         <div>
-            <h2>My PaySlips</h2>
-
-            <div class="input-container">
-                <asp:Label ID="Label1" runat="server" Text="Enter Employee ID:"></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server" CssClass="input-textbox"></asp:TextBox>
-                <asp:Button ID="Button1" runat="server" Text="Fetch Details" OnClick="Button1_Click" CssClass="btn" />
+            <h1>PayRoll</h1>
             </div>
-            <br />
+              <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+        margin: 0;
+        padding: 0;
+    }
 
-            <!-- GridView to display employee details -->
-            <div class="grid-container">
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" OnRowCommand="GridView1_RowCommand">
-                    <Columns>
-                        <asp:BoundField DataField="ID" HeaderText="ID" />
-                        <asp:BoundField DataField="Month" HeaderText="Month" />
-                        <asp:BoundField DataField="Year" HeaderText="Year" />
-                        <asp:TemplateField HeaderText="Payslip">
-                            <ItemTemplate>
-                                <%# "PaySlip_" + Eval("ID") + Eval("Month") + Eval("Year") + ".pdf" %>
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Action">
-                            <ItemTemplate>
-                                <asp:Button ID="btnView" runat="server" Text="View" CommandName="View" CommandArgument='<%# Eval("ID") + "," + Eval("Month") + "," + Eval("Year") %>' CssClass="btn" />
-                                <asp:Button ID="btnDownload" runat="server" Text="Download" CommandName="Download" CommandArgument='<%# Eval("ID") + "," + Eval("Month") + "," + Eval("Year") %>' CssClass="btn" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
-            </div>
+    .container-fluid {
+        background-color: #007bff;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container-fluid h1 {
+        margin: 0;
+        font-size: 2rem;
+    }
+
+    label {
+        font-weight: bold;
+        margin-right: 10px;
+    }
+
+    .form-group {
+        margin: 20px;
+        padding: 10px;
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .form-group p {
+        margin: 10px 0;
+    }
+
+    .form-group select, .form-group input {
+        padding: 5px;
+        margin: 5px 0;
+        width: 100%;
+        max-width: 300px;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+
+    .form-group button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+    .form-group button:hover {
+        background-color: #0056b3;
+    }
+
+    .form-group label {
+        display: inline-block;
+        width: 150px;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .form-group .asp-label {
+        margin-left: 10px;
+    }
+
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    @media (max-width: 768px) {
+        label {
+            width: 100%;
+            text-align: left;
+        }
+
+        .form-group input, .form-group select {
+            max-width: 100%;
+        }
+
+        .container-fluid {
+            text-align: left;
+        }
+    }
+</style>
+        <div class="container-fluid">
+            <h1>PaySlip Generation</h1>
+             <label for="TextBox1">Email:</label>
+             <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Button ID="Button1" runat="server" Text="Fetch" OnClick="Button1_Click" />
+           
         </div>
+             <div>
+                 <p><label for="Label1">Email:</label><asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                <p><label for="Label">Basic salary:</label> <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                <p><label for="Label3">Present Days:</label> <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                <p><label for="Label4">Absent Days:</label> <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                 <p><label for="Label5">Total leaves:</label><asp:Label ID="Label5" runat="server" Text="Label"></asp:Label>
+             </div>
+             <div>
+                 <asp:DropDownList ID="DropDownList1" runat="server">
+                     <asp:ListItem>JAN</asp:ListItem>
+                     <asp:ListItem>FEB</asp:ListItem>
+                     <asp:ListItem>MAR</asp:ListItem>
+                     <asp:ListItem>APR</asp:ListItem>
+                     <asp:ListItem>MAY</asp:ListItem>
+                     <asp:ListItem>JUN</asp:ListItem>
+                     <asp:ListItem>JUL</asp:ListItem>
+                     <asp:ListItem>AUG</asp:ListItem>
+                     <asp:ListItem>SEPT</asp:ListItem>
+                     <asp:ListItem>OCT</asp:ListItem>
+                     <asp:ListItem>NOV</asp:ListItem>
+                     <asp:ListItem>DEC</asp:ListItem>
+                     <asp:ListItem></asp:ListItem>
+                 </asp:DropDownList>
+             </div>
+             <div>
+                 <asp:DropDownList ID="DropDownList2" runat="server">
+                     <asp:ListItem>2024</asp:ListItem>
+                     <asp:ListItem>2025</asp:ListItem>
+                     <asp:ListItem>2026</asp:ListItem>
+                     <asp:ListItem>2027</asp:ListItem>
+                     <asp:ListItem>2028</asp:ListItem>
+                     <asp:ListItem>2029</asp:ListItem>
+                     <asp:ListItem>2030</asp:ListItem>
+                     <asp:ListItem></asp:ListItem>
+                 </asp:DropDownList>
+             </div>
+             <div>
+                 <asp:Button ID="Button2" runat="server" Text="Generate PaySlip" OnClick="Button2_Click" />
+             
+             </div>
         <!-- #/ container -->
+    </div>
     </div>
 <!--**********************************
     Content body end

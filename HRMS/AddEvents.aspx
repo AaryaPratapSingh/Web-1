@@ -234,10 +234,8 @@
                                         </li>
                                         
                                         <hr class="my-2">
-                                        <li>
-                                            <a href="page-lock.html"><i class="icon-lock"></i> <span>Lock Screen</span></a>
-                                        </li>
-                                        <li><a href="page-login.html"><i class="icon-key"></i> <span>Logout</span></a></li>
+                                        
+                                        <li><a href="SignUp.aspx"><i class="icon-key"></i> <span>Logout</span></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -261,10 +259,6 @@
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
-                        <ul aria-expanded="false">
-                            <li><a href="Admin.aspx">Home</a></li>
-                            <!-- <li><a href="./index-2.html">Home 2</a></li> -->
-                        </ul>
                     </li>
                     <!-- Admin -->
                     <li class="mega-menu mega-menu-sm">
@@ -277,6 +271,8 @@
                             <li><a href="AttendanceManagement.aspx">Attendance Management</a></li>
                             <li><a href="LeaveManagement.aspx">Leave Management</a></li>
                             <li><a href="Payroll.aspx">Payroll</a></li>
+                            <li><a href="PayrollFetch.aspx">Payroll Data</a></li>
+
                             <li><a href="SignIn.aspx">+</a></li> 
                         </ul>
                     </li>
@@ -305,16 +301,16 @@
 
                         </ul>
                     </li>
-                   
-                    <!-- Email -->
+
+                    <!-- Performance -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                            <i class="icon-pie-chart menu-icon"></i><span class="nav-text">Performance</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./email-inbox.html">Inbox</a></li>
-                            <li><a href="./email-read.html">Read</a></li>
-                            <li><a href="./email-compose.html">Compose</a></li>
+                            <li><a href="PerformanceFrom.aspx">Fill The From</a></li>
+                            <li><a href="PerformanceReport.aspx">All Reports</a></li>
+                            <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
                     <!-- Chart -->
@@ -331,6 +327,19 @@
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
                     </li>
+
+                    <!-- Email -->
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="icon-envelope menu-icon"></i> <span class="nav-text">Email</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./email-inbox.html">Inbox</a></li>
+                            <li><a href="./email-read.html">Read</a></li>
+                            <li><a href="./email-compose.html">Compose</a></li>
+                        </ul>
+                    </li>
+                    
                     <!-- Contact & Support -->
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
@@ -348,6 +357,7 @@
                         <ul aria-expanded="false">
                             <li><a href="SignIn.aspx">SignIn</a></li>
                             <li><a href="SignUp.aspx">SignUp</a></li>
+                            <li><a href="SignUp.aspx"><i class="icon-key"></i> <span>Logout</span></a></li>
                             <li><a href="SignIn.aspx">+</a></li>
                         </ul>
                     </li>
@@ -359,18 +369,20 @@
         ***********************************-->
 
         <!--**********************************
-            Content body start
-        ***********************************-->
+     Content body start
+ ***********************************-->
         <div class="content-body">
 
-            <div class="container-fluid mt-3">
-                <h1>Add Events</h1>
+    <div class="container-fluid mt-3">
+        <div>
+            <h1> Add Events</h1>
             </div>
-            <!-- #/ container -->
-        </div>
+    </div>
+    <!-- #/ container -->
+</div>
         <!--**********************************
-            Content body end
-        ***********************************-->
+        Content body end
+    ***********************************-->
         
         
         <!--**********************************

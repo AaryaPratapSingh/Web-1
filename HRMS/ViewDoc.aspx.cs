@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -46,31 +47,44 @@ namespace HRMS
         }
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {
-            if (e.CommandName == "View")
+            if (e.CommandName == "View" || e.CommandName == "Download")
             {
-                string filePath = e.CommandArgument.ToString();
-                string absolutePath = ResolveUrl("~/" + filePath);
+                
 
-                // Logic to display the file, e.g., open in a new tab
-                Response.Redirect(absolutePath);
-            }
-            else if (e.CommandName == "Download")
-            {
-                string filePath = e.CommandArgument.ToString();
-                string absolutePath = Server.MapPath("~/" + filePath);
+                    string[] args = e.CommandArgument.ToString().Split(',');
+                    ID =(args[0]);
+                    string month = args[1];
+                    string year = args[2];
 
-                if (System.IO.File.Exists(absolutePath))
-                {
-                    Response.ContentType = "application/octet-stream";
-                    Response.AppendHeader("Content-Disposition", $"attachment; filename={System.IO.Path.GetFileName(absolutePath)}");
-                    Response.TransmitFile(absolutePath);
-                    Response.End();
+                    string fileName = $"PaySlip_{ID}{month}{year}.pdf";
+                    string filePath = Server.MapPath($"~/DocFiles/{fileName}");
+
+                    if (File.Exists(filePath))
+                    {
+                        if (e.CommandName == "View")
+                        {
+
+                            Response.ContentType = "application/pdf";
+                            Response.AppendHeader("Content-Disposition", $"inline; filename={fileName}");
+                            Response.TransmitFile(filePath);
+                            Response.End();
+                        }
+
+                    }
+                    else if (e.CommandName == "Download")
+                    {
+
+                        Response.ContentType = "application/pdf";
+                        Response.AppendHeader("Content-Disposition", $"attachment; filename={fileName}");
+                        Response.TransmitFile(filePath);
+                        Response.End();
+                    }
                 }
-                else
+              else
                 {
-                    Response.Write("<script>alert('File not found.');</script>");
+                    Response.Write("<script>alert('Payslip file not found.');</script>");
                 }
+        
             }
         }
     }
-}
